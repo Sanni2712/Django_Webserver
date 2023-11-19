@@ -1,0 +1,35 @@
+{% extends 'main/base.html'%}
+
+{% block contentwhite1%}
+<div class="h-screen bg-black">
+          <div class="text-center">
+            <h1 class="font-normal text-3xl text-white leading-loose my-3">To Do List</h1>
+            <div class="w-full text-center">
+              <form method="POST">
+                <div>
+                	{% csrf_token %} 
+
+                  <input type="text" placeholder="name of the to do list" class="flex-1 appearance-none rounded shadow p-3 text-grey-dark mr-2 focus:outline-none" name="name">
+                  <input type="text" placeholder="description" class="flex-1 appearance-none rounded shadow p-3 text-grey-dark mr-2 focus:outline-none" name="desc">
+  
+                  <button type="submit" class="appearance-none bg-white text-black text-base font-semibold tracking-wide p-3 rounded shadow hover:bg-indigo-light">Create</button>
+                </div>
+              </form>
+              <a class="text-white"><p style="font-size:12px"><font color="#DC143C">{{message}}</font></p></a>
+            </div>
+               <div>&nbsp;</div> 
+              <div>
+              	
+            {% for td in user.todolist.all %}
+            <a href="/home">
+
+            <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+             {{td.name}}
+             {{td.item_set.text}}
+                 </button>
+            </a>
+            {% endfor %}
+
+              </div>
+</div>
+{% endblock %}

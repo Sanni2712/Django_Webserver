@@ -1,0 +1,12 @@
+{% extends 'main/base.html'%}
+
+{% block contentwhite2%}
+{% if request.user.is_authenticated %}
+        <p>User is logged in :)</p>
+        welcome {{username}}
+    {% else %}
+       <a class="text-white"><p style="font-size:14px"><a class="text-sm text-blue-600 hover:underline" href="/signin"><p style="font-size:14px">login</p></a>&nbsp; or &nbsp;</p><a class="text-sm text-blue-600 hover:underline" href="/signup"><p style="font-size:14px">create an account</p></a></a>
+    {% endif %}
+
+
+{% endblock %}

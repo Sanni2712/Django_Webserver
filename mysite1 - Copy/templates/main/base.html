@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<header class="text-gray-600 body-font">
+<!-- component -->
+<nav class="shadow-lg border-t-1 border-black">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex justify-between">
+      <div class="flex space-x-7">
+
+        <div>
+          <a href="#" class="flex items-center py-4 px-100">
+            <img src="https://cdn.discordapp.com/attachments/898579496955953152/965235222625001582/Eyes_-_The_Horror_Game_65.jpg" alt="Logo" class="rounded-full h-8 w-8 mr-2" /><span class="font-semibold text-gray-500 text-lg">Grave Games corp.</span>
+            </a>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center space-x-1">
+        <a href="/home" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">Home</a>
+
+        <a href="/projects" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">Projects</a>
+        <a href="dashboard" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">dashboard</a>
+        <a href="/signup" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">sign-up</a>
+        <a href="/signin" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">sign-in</a>
+        <a href="/logout" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">logout</a>
+        <a href="/aboutme" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">about me</a>
+
+      <div class="mr-10 flex md:hidden">
+        <button class="inline-flex items-center justify-center p-2 rounded-md text-dark">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 96v64h448V96H32zm0 128v64h448v-64H32zm0 128v64h448v-64H32z">
+            </path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+</nav>
+</header>
+<style type="text/css">
+  .main{
+    margin-left: 160px;
+    padding: 0px 10px;
+  }
+  .body-bg {
+            background-color: #000000;
+            background-image: linear-gradient(0deg, #0000 0%, #0000 0%);
+        }  
+</style>
+
+
+<div>
+  {% block contentwhite1 %}
+  {% endblock %}
+
+  <div class="main">
+    {% block contentwhite2 %}
+    {% endblock %}
+  </div>
+
+</div>
+
+
+<div id="content" class="body-bg">
+  {% block contentblack1 %}
+  {% endblock %}
+
+  <div class="main">
+    {% block contentblack2 %}
+    {% endblock %}
+  </div>
+</div>
+
+</body>
+</html>
